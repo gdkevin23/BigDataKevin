@@ -1,0 +1,17 @@
+In [1]: import re
+
+In [2]: import os
+
+In [3]: os.chdir("C:/Users/User/Clase_Big_data/CorreosTXT")
+
+In [4]: file=open("data.txt", "r")
+
+In [5]: txt=file.read()
+
+In [6]: email_regex=r"\w+[.|]+\w+@\w+\.\w+"
+
+In [7]: def extract_email(text):
+   ...:     return re.findall(email_regex,text)
+   ...:
+
+In [8]: emails=extract_email(text=txt)
